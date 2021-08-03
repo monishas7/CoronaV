@@ -4,20 +4,10 @@ CREATE TABLE `admin` (
   `admin_email` varchar(100) NOT NULL,
   `admin_password` varchar(100) NOT NULL,
   PRIMARY KEY  (`admin_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `admin`
---
+);
 
 INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_password`) VALUES
 (1, 'admin', 'admin@gmail.com', 'admin1234');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cart`
---
 
 CREATE TABLE `cart` (
   `p_id` int(10) NOT NULL,
@@ -26,11 +16,7 @@ CREATE TABLE `cart` (
   `user_id` int(10) default NULL,
   `qty` int(10) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
-
---
--- Dumping data for table `cart`
---
+);
 
 INSERT INTO `cart` (`p_id`, `id`, `ip_add`, `user_id`, `qty`) VALUES
 (2, 11, '127.0.0.1', 1, 1),
@@ -40,21 +26,11 @@ INSERT INTO `cart` (`p_id`, `id`, `ip_add`, `user_id`, `qty`) VALUES
 (1, 15, '127.0.0.1', 1, 1),
 (28, 19, '127.0.0.1', 1, 1);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `categories`
---
-
 CREATE TABLE `categories` (
   `cat_id` int(10) NOT NULL auto_increment,
   `cat_title` varchar(100) NOT NULL,
   PRIMARY KEY  (`cat_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `categories`
---
+);
 
 INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 (1, 'HOME MEDICINE'),
@@ -62,38 +38,17 @@ INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 (3, 'HEALTH LIBRARY'),
 (4, 'PHARMACY');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `contact_us`
---
-
 CREATE TABLE `contact_us` (
   `email` varchar(50) NOT NULL,
   `subject` varchar(100) NOT NULL,
   `content` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `contact_us`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `email_info`
---
+);
 
 CREATE TABLE `email_info` (
   `email_id` int(10) NOT NULL auto_increment,
   `email` varchar(100) NOT NULL,
   PRIMARY KEY  (`email_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `email_info`
---
+);
 
 INSERT INTO `email_info` (`email_id`, `email`) VALUES
 (1, 'pradeepbagotia@gmail.com'),
@@ -101,30 +56,14 @@ INSERT INTO `email_info` (`email_id`, `email`) VALUES
 (3, 'aryaa123@gmail.com'),
 (4, 'aaa@gmail.com');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `logs`
---
-
 CREATE TABLE `logs` (
   `id` int(10) NOT NULL auto_increment,
   `user_id` varchar(50) NOT NULL,
   `action` varchar(50) NOT NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+);
 
---
--- Dumping data for table `logs`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `orders`
---
 
 CREATE TABLE `orders` (
   `order_id` int(10) NOT NULL auto_increment,
@@ -134,18 +73,7 @@ CREATE TABLE `orders` (
   `trx_id` varchar(50) NOT NULL,
   `p_status` varchar(50) NOT NULL,
   PRIMARY KEY  (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `orders`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `orders_info`
---
+);
 
 CREATE TABLE `orders_info` (
   `order_id` int(10) NOT NULL auto_increment,
@@ -163,21 +91,12 @@ CREATE TABLE `orders_info` (
   `total_amount` int(10) default NULL,
   `cvv` int(5) NOT NULL,
   PRIMARY KEY  (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+);
 
---
--- Dumping data for table `orders_info`
---
 
 INSERT INTO `orders_info` (`order_id`, `user_id`, `f_name`, `email`, `address`, `city`, `state`, `zip`, `cardname`, `cardnumber`, `expdate`, `prod_count`, `total_amount`, `cvv`) VALUES
 (1, 1, 'Arya A', 'arya12@gmail.com', '#23,yelahanka new town, bangalore-64', 'bangalore', 'Karnataka', 560064, 'Arya A', '968427501843', '12/20', 0, NULL, 909),
 (2, 1, 'Arya A', 'arya12@gmail.com', '#23,yelahanka new town, bangalore-64', 'bangalore', 'Karnataka', 560064, 'Arya A', '983617422745', '12/20', 0, NULL, 909);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `order_products`
---
 
 CREATE TABLE `order_products` (
   `order_pro_id` int(10) NOT NULL auto_increment,
@@ -186,18 +105,8 @@ CREATE TABLE `order_products` (
   `qty` int(10) default NULL,
   `amt` int(15) default NULL,
   PRIMARY KEY  (`order_pro_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+);
 
---
--- Dumping data for table `order_products`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `products`
---
 
 CREATE TABLE `products` (
   `product_id` int(10) NOT NULL auto_increment,
@@ -208,11 +117,8 @@ CREATE TABLE `products` (
   `product_image` text NOT NULL,
   `product_image1` text NOT NULL,
   PRIMARY KEY  (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
+);
 
---
--- Dumping data for table `products`
---
 
 INSERT INTO `products` (`product_id`, `product_cat`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_image1`) VALUES
 (1, 1, 'HIMALAYA WELLNESS PURE HERBS AMALAKI TABLET', 200, 'Health is one of most important things in our life. We think that it is a real luck to have a strong health. Our way of life doesn’t increase the physiological condition of our body. Alcohol, cigarettes, unhealthy food, stresses and other factors have a great influence on our health. The human’s immune system is very uncertain thing because there is a countless quantity of different dangerous viruses and bacteria. From ancient times plague and other infectious diseases have been killing people without leaving them any chance to survive. All these diseases are even worse than wars by the quantity of deaths.\r\n\r\nIt is very noble activity to protect health and help people recover. Our main goal is to find the easiest way of treatment. We understand that human’s activity is also very dangerous because it could lead to unforeseeable consequences like some complications or even death. Our company states that our goods are of premium quality. There is nothing to worry about.\r\n\r\nThis product is totally safe for your health. It has passed many various tests without a single failure. It is really a product of a new generation. Our vendors guarantee no side effects. We have a great experience and good reputation in this business. One of the main advantages of our products is their reliability because we put great efforts into providing different researches that help us integrate the new safe technologies in our business.\r\n\r\nWell, if you are ready to purchase our goods we will help you to make a right choice. If you have some questions, you can address our support system.', '11.jpg', '11 (2).jpg'),
@@ -248,12 +154,6 @@ INSERT INTO `products` (`product_id`, `product_cat`, `product_title`, `product_p
 (31, 4, 'PRESTO! 2 PLY FACIAL TISSUE SOFT POLY PACK - 200 PLUS', 299, 'Health is one of most important things in our life. We think that it is a real luck to have a strong health. Our way of life doesn’t increase the physiological condition of our body. Alcohol, cigarettes, unhealthy food, stresses and other factors have a great influence on our health. The human’s immune system is very uncertain thing because there is a countless quantity of different dangerous viruses and bacteria. From ancient times plague and other infectious diseases have been killing people without leaving them any chance to survive. All these diseases are even worse than wars by the quantity of deaths.\r\n\r\nIt is very noble activity to protect health and help people recover. Our main goal is to find the easiest way of treatment. We understand that human’s activity is also very dangerous because it could lead to unforeseeable consequences like some complications or even death. Our company states that our goods are of premium quality. There is nothing to worry about.\r\n\r\nThis product is totally safe for your health. It has passed many various tests without a single failure. It is really a product of a new generation. Our vendors guarantee no side effects. We have a great experience and good reputation in this business. One of the main advantages of our products is their reliability because we put great efforts into providing different researches that help us integrate the new safe technologies in our business.\r\n\r\nWell, if you are ready to purchase our goods we will help you to make a right choice. If you have some questions, you can address our support system.', '45.jpg', '45 (2).jpg'),
 (32, 4, 'HIMALAYA PURIFYING NEEM FACIAL WIPES, 25 COUNT (PACK OF 2)', 130, 'Health is one of most important things in our life. We think that it is a real luck to have a strong health. Our way of life doesn’t increase the physiological condition of our body. Alcohol, cigarettes, unhealthy food, stresses and other factors have a great influence on our health. The human’s immune system is very uncertain thing because there is a countless quantity of different dangerous viruses and bacteria. From ancient times plague and other infectious diseases have been killing people without leaving them any chance to survive. All these diseases are even worse than wars by the quantity of deaths.\r\n\r\nIt is very noble activity to protect health and help people recover. Our main goal is to find the easiest way of treatment. We understand that human’s activity is also very dangerous because it could lead to unforeseeable consequences like some complications or even death. Our company states that our goods are of premium quality. There is nothing to worry about.\r\n\r\nThis product is totally safe for your health. It has passed many various tests without a single failure. It is really a product of a new generation. Our vendors guarantee no side effects. We have a great experience and good reputation in this business. One of the main advantages of our products is their reliability because we put great efforts into providing different researches that help us integrate the new safe technologies in our business.\r\n\r\nWell, if you are ready to purchase our goods we will help you to make a right choice. If you have some questions, you can address our support system.', '46.jpg', '46 (2).jpg');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user_info`
---
-
 CREATE TABLE `user_info` (
   `user_id` int(10) NOT NULL auto_increment,
   `first_name` varchar(100) NOT NULL,
@@ -264,58 +164,25 @@ CREATE TABLE `user_info` (
   `address1` varchar(100) NOT NULL,
   `address2` varchar(100) NOT NULL,
   PRIMARY KEY  (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+);
 
---
--- Dumping data for table `user_info`
---
-
---
-
-
-
---
--- Indexes for dumped tables
---
-
-
--- Indexes for table `logs`
---
---
--- Indexes for table `orders_info`
---
 ALTER TABLE `orders_info`
   ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `order_products`
---
+  
 ALTER TABLE `order_products`
   ADD KEY `order_products` (`order_id`),
   ADD KEY `product_id` (`product_id`);
 
-
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `orders_info`
---
 ALTER TABLE `orders_info`
   ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`user_id`);
 
---
--- Constraints for table `order_products`
---
+
 ALTER TABLE `order_products`
   ADD CONSTRAINT `order_products` FOREIGN KEY (`order_id`) REFERENCES `orders_info` (`order_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
   
-  SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-  START TRANSACTION;
-  SET time_zone = "+00:00";
-  
-  COMMIT
-COMMIT;
+COMMIT
