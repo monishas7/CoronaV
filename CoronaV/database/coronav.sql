@@ -1,29 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 2.11.5
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Generation Time: Dec 03, 2020 at 05:44 AM
--- Server version: 5.0.51
--- PHP Version: 5.2.5
-
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
-
---
--- Database: `coronav`
---
-
--- --------------------------------------------------------
-
 CREATE TABLE `admin` (
   `admin_id` int(10) NOT NULL auto_increment,
   `admin_name` varchar(100) NOT NULL,
@@ -338,9 +312,10 @@ ALTER TABLE `orders_info`
 ALTER TABLE `order_products`
   ADD CONSTRAINT `order_products` FOREIGN KEY (`order_id`) REFERENCES `orders_info` (`order_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
+  
+  SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+  START TRANSACTION;
+  SET time_zone = "+00:00";
+  
+  COMMIT
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
